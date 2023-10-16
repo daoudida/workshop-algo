@@ -1,0 +1,30 @@
+PROCÉDURE dot_product(v1, v2, ps)
+    ps <- 0
+     POUR i DE 1 À LONGUEUR(v1) FAIRE
+        ps <- ps + (v1[i] * v2[i])
+    FIN POUR
+FIN PROCÉDURE
+
+FONCTION are_vectors_orthogonal(v1, v2)
+    VAR ps
+    dot_product(v1, v2, ps)
+    SI ps = 0 ALORS
+        RETOURNER VRAI
+    SINON
+        RETOURNER FAUX
+    FIN SI
+FIN FONCTION
+
+// Exemple d'utilisation
+VAR n
+LIRE n // Le nombre de paires de vecteurs à vérifier
+POUR i DE 1 À n FAIRE
+    VAR v1, v2
+    LIRE v1 
+    LIRE v2 
+    SI are_vectors_orthogonal(v1, v2) ALORS
+        AFFICHER "Les vecteurs sont orthogonaux."
+    SINON
+        AFFICHER "Les vecteurs ne sont pas orthogonaux."
+    FIN SI
+FIN POUR

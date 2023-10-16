@@ -1,0 +1,40 @@
+ALGORITHM SommeDistinct
+VAR
+    set1, set2: tab[1...N] de reel
+    i, j: entier
+    S: reel
+
+BEGIN
+    i <- 1;
+    j <- 1;
+    S <- 0;
+
+    ecrire("Entrez les éléments de set1");
+    POUR i DE 1 A N FAIRE
+        lire(set1[i]);
+    FINPOUR
+
+    ecrire("Entrez les éléments de set2");
+    POUR j DE 1 A N FAIRE
+        lire(set2[j]);
+    FINPOUR
+
+    POUR i DE 1 A N FAIRE
+        POUR j DE 1 A N FAIRE
+            SI set1[i] != set2[j] ALORS
+                S <- S + set1[i];
+                
+            FINSI
+        FINPOUR
+    FINPOUR
+
+    POUR j DE 1 A N FAIRE
+        POUR i DE 1 A N FAIRE
+        SI set2[j] != set[i] ALORS
+            S <- S + set2[j];
+        FINSI
+        FINPOUR
+    FINPOUR
+
+    ecrire("La somme est ", S);
+END
